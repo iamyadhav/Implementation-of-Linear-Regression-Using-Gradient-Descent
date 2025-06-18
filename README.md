@@ -9,13 +9,74 @@ To write a program to predict the profit of a city using the linear regression m
 
 ### Algorithm
 
-1.Import pandas, numpy and mathplotlib.pyplot.
 
-2.Trace the best fit line and calculate the cost function.
+Implementation-of-Linear-Regression-Using-Gradient-Descent
+Give a detailed algorithm 
+ChatGPT said:
+Here is a detailed algorithm for the Implementation of Linear Regression using Gradient Descent:
 
-3.Calculate the gradient descent and plot the graph for it.
+✅ Linear Regression using Gradient Descent – Detailed Algorithm
+🔷 Goal
+Predict a continuous output y from input features X using a linear function
+^
+​
+ =w⋅x+b
+Where:
 
-4.Predict the profit for two population sizes.
+w
+w is the weight vector
+
+b
+b is the bias
+
+x
+x is the input feature vector
+
+We minimize the Mean Squared Error (MS
+2
+ 
+🔽 Step-by-Step Algorithm
+Step 1: Initialize Parameters
+Randomly initialize weights 
+
+Set number of iterations (epochs)
+
+w = 0 (or small random value)
+b = 0
+alpha = 0.01
+epochs = 1000
+Step 2: Prepare Data
+Input: Feature matrix 
+n
+n: number of samples
+
+m
+m: number of features
+
+Step 3: Loop until convergence (Gradient Descent)
+Repeat for a fixed number of epochs:
+
+Step 3.1: Compute Pred
+y_pred = np.dot(X, w) + b
+Step 3.2: Compute Gradients
+Gradient of Loss w.r.t. weights 
+
+dw = (2/n) * np.dot(X.T, (y_pred - y))
+db = (2/n) * np.sum(y_pred - y)
+Step 3.3: Update Parameters
+ 
+w = w - alpha * dw
+b = b - alpha * db
+Step 3.4 (Optional): Track Loss
+Compute MSE at every few iterations to monitor performance.
+ 
+Step 4: Final Output
+After convergence, return learned parameters 
+
+Use them to make predictions:
+
+def predict(X_new):
+    return np.dot(X_new, w) + b
 Program:
 ```
 /*
